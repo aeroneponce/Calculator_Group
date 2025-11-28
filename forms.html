@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+    body{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        background: #f0f0f0;
+        margin: 0;
+    }
+
+    .form{
+        background: rgb(203, 222, 245);
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.452);
+        font-size: 22px;
+    }
+
+    input[type="text"]{
+        padding: 10px;
+        margin: 5px 10px;
+        border: 2px solid #b6c9e0;
+        border-radius: 10px;
+        outline: none;
+        font-size: 16px;
+        width: 300px;
+        transition: 0.3s;
+    }
+
+    ::placeholder{
+        color: #6d6d6d;
+    }
+
+    input[type="button"]{
+        padding: 10px 20px;
+        background: #4a6fa8;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    input[type="button"]:hover{
+        background: #3b5a89;
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<div>
+
+    <div class="form">
+
+        <h1>Account Registration</h1>
+
+        <div>
+            First Name:
+            <input type="text" id="fname" placeholder="Enter first name">
+            Last Name:
+            <input type="text" id="lname" placeholder="Enter last name">
+            Middle Name:
+            <input type="text" id="MidName" placeholder="Enter middle name">
+        </div>
+
+        <br>
+
+        <div>
+            Age:
+            <input type="text" id="Age" placeholder="Enter age">
+            Mail:
+            <input type="text" id="Mail" placeholder="Enter email">
+            Address:
+            <input type="text" id="Address" placeholder="Enter full address">
+        </div>
+
+        <br>
+
+        <div>
+            <input type="button" value="Submit" onclick="Submit()">
+        </div>
+
+<script>
+function Submit() {
+    let fname = document.getElementById("fname").value.trim();
+    let lname = document.getElementById("lname").value.trim();
+    let MidIn = document.getElementById("MidName").value.trim();
+    let Age = document.getElementById("Age").value.trim();
+    let Mail = document.getElementById("Mail").value.trim();
+    let Address = document.getElementById("Address").value.trim();
+
+    if (!fname || !lname || !MidIn || !Age || !Mail || !Address) {
+        alert("Fill up the form.");
+
+    if (!fname) 
+        alert("First Name is required.");
+    if (!lname) 
+        alert("Last Name is required.");
+    if (!MidIn) 
+        alert("Middle Name is required.");
+    if (!Age) 
+        alert("Age is required.");
+    if (!Mail) 
+        alert("Email is required.");
+    if (!Address) 
+        alert("Address is required.");
+        return;
+
+    } else   
+        
+    alert("Data Successfully Input!");
+
+    document.getElementById("fname").value = "";
+    document.getElementById("lname").value = "";
+    document.getElementById("MidName").value = "";
+    document.getElementById("Age").value = "";
+    document.getElementById("Mail").value = "";
+    document.getElementById("Address").value = "";
+}
+</script>
+
+</body>
+</html>
